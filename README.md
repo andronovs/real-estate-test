@@ -17,11 +17,11 @@ Assuming node.js has already been configured locally, here are the steps to get 
 This will populate the local sqlite database with some default dummy data to start. 
 4. Open a command line window in real-estate-test folder and run 
 
->webpack
+> webpack
 
 5. Open another command line window in the same folder and execute the 
 
->npm start 
+> npm start 
 
 6. Launch the browser (this web site was originally tested in Google Chrome) and navigate to 
 
