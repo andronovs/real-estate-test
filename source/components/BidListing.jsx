@@ -61,6 +61,7 @@ class BidListing extends React.Component {
         const listingId = this.state.listingId; 
         const listing = this.state.listing; 
         const lastOffer = this.state.lastOffer; 
+        
         console.log("BidListing: render():", listing, listingId, lastOffer); 
             
         if (!listing) {
@@ -137,7 +138,7 @@ class BidListing extends React.Component {
                         <input 
                             type="button" 
                             name="btnSave"
-                            value="Submit Bid"
+                            value="Submit Offer"
                             class="btn btn-primary"
                             onClick={this.submitBid} /> 
                     </div>

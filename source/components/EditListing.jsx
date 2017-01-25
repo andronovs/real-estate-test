@@ -60,14 +60,16 @@ class EditListing extends React.Component {
         console.log("EditListing: saveListing():", this.state.listing); 
 
         const listingId = this.state.listingId; 
+        let message = "New listing has been added successfully!"; 
         if (listingId > 0) {
             RealEstateActionCreators.updateListing(listing); 
+            message = `Listing #${listingId} has been updated successfully!`; 
         }
         else {
             RealEstateActionCreators.addNewListing(listing); 
         }
 
-        alert(`New listing has been added successfully!`); 
+        alert(message); 
 
         // redirect back to the main listing view 
         window.location.href = '/#'; 
@@ -77,6 +79,7 @@ class EditListing extends React.Component {
 
         const listingId = this.state.listingId; 
         const listing = this.state.listing; 
+        
         console.log("EditListing: render():", listing, listingId); 
             
         if (!listing) {
@@ -89,7 +92,6 @@ class EditListing extends React.Component {
 
         const dateListed = moment(listing.dateListed, "DD-MM-YYYY HH:mm:ss").format("YYYY-MM-DD"); 
         const pageHeader = listingId > 0? `Editing listing #${listing.id}` : "Adding a New Listing"; 
-        //const x = moment(new Date()).format("YYYY-MM-DD"); 
 
         return(
             <div className="container">

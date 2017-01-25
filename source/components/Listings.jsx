@@ -1,5 +1,4 @@
 import React from 'react';
-//import moment from 'moment'; 
 
 import RealEstateActionCreators from '../actions/RealEstateActionCreators'; 
 import RealEstateStore from '../stores/RealEstateStore'; 
@@ -41,13 +40,11 @@ class Listings extends React.Component {
     } 
 
     deleteListing(listing) {
-        //e.preventDefault();
-        console.log("deleteListing()"); 
 
-        if (confirm(`Delete the listing with Id=${listing.id}?`)) { 
+        if (confirm(`Delete the listing #${listing.id}?`)) { 
             RealEstateActionCreators.deleteListing(listing.id); 
 
-            alert(`Listing with Id=${listing.id} has been deleted successfully!`); 
+            alert(`Listing #${listing.id} has been deleted successfully!`); 
             
             // refresh the main listing view 
             RealEstateActionCreators.fetchListings(); 

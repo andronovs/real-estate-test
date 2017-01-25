@@ -105,7 +105,7 @@ function _updateListing(listing) {
     .send({ listing: JSON.stringify(listing) }) 
     .end(function(err, resp) {
         if (err || !resp.ok) {
-            console.warn('There was an error updating the real estate listing:', listing); 
+            console.warn('RealEstateStore: There was an error updating the real estate listing:', listing); 
         } else {
             emitChange();
         } 
@@ -120,7 +120,7 @@ function _addNewListing(listing) {
     .send({ listing: JSON.stringify(listing) }) 
     .end(function(err, resp) {
         if (err || !resp.ok) {
-            console.warn('There was an error adding the real estate listing:', listing); 
+            console.warn('RealEstateStore: There was an error adding the real estate listing:', listing); 
         } else {
             emitChange();
         } 
@@ -134,7 +134,7 @@ function _deleteListing(id) {
     ajax.delete(`/api/listing/${id}`)
     .end(function(err, resp) {
         if (err || !resp.ok) {
-            console.warn('There was an error deleting the real estate listing with Id=', id); 
+            console.warn('RealEstateStore: There was an error deleting the real estate listing with Id=', id); 
         } else {
             emitChange();
         } 
@@ -150,7 +150,7 @@ function _validateOffer(id, amount) {
     .send({ amount: amount }) 
     .end(function(err, resp) {
         if (err || !resp.ok) {
-            console.warn('There was an error validating the offer:', id, amount); 
+            console.warn('RealEstateStore: There was an error validating the offer:', id, amount); 
         } else {
             _lastOffer = JSON.parse(resp.body); 
             console.log("_validateOffer():", _lastOffer); 
