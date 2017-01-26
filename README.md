@@ -1,7 +1,6 @@
 # real-estate-test
 
-As requested, this web site is a technical challenge project. 
-The site is available at 
+Technical challenge project. The site is available at 
 
 https://real-estate-test.herokuapp.com
 
